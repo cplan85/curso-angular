@@ -1,25 +1,24 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-
 <div class="content" role="main">
 
 <span style="color:red; font-weight:bold">{{title}} esta ejecutandose y sera una gran aplicacion</span>
 <br/>
+
+<h1>See my Text from the child element: {{message}}</h1>
 <span>Saludos: {{saludos}}</span>
 <br/>
 <app-empleados></app-empleados>
 <app-empleado></app-empleado>
 <app-empleado></app-empleado>
 <app-empleado></app-empleado>
+<!-- look to inline exampe component for child data -->
+<app-inline-example [parentData] ="name" (childEvent)="message=$event"></app-inline-example>
+<!-- EXAMPLE OF CLASS BINDING HERE WITH CSS -->
+<button [class.active]="isActive" [style.borderColor]="isGreen ? 'green' : 'white'">My button</button>
+<!-- EXAMPLE OF EVENT BINDING. other events include mouseover or mouseout -->
+<button (click)="save($event)">SAVE</button>
+<!-- EXAMPLE OF EVENT FILTERING WITH USER PRESSING ENTER -->
+<input type="text" (keyup) = "onKeyUp($event)">
+
 </div>
 
 <router-outlet></router-outlet>
