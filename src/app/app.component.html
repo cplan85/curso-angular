@@ -3,22 +3,31 @@
 <span style="color:red; font-weight:bold">{{title}} esta ejecutandose y sera una gran aplicacion</span>
 <br/>
 
-<h1>See my Text from the child element: {{message}}</h1>
 <span>Saludos: {{saludos}}</span>
 <br/>
 <app-empleados></app-empleados>
 <app-empleado></app-empleado>
 <app-empleado></app-empleado>
 <app-empleado></app-empleado>
-<!-- look to inline exampe component for child data -->
+<h3>EXAMPLE OF CHILD COMPONENT READING FROM PARENT</h3>
 <app-inline-example [parentData] ="name" (childEvent)="message=$event"></app-inline-example>
-<!-- EXAMPLE OF CLASS BINDING HERE WITH CSS -->
+<h2>See my Text from the child element: {{message}}</h2>
+<h3>Example of class BINDING</h3>
 <button [class.active]="isActive" [style.borderColor]="isGreen ? 'green' : 'white'">My button</button>
-<!-- EXAMPLE OF EVENT BINDING. other events include mouseover or mouseout -->
+<h3>Example of Event Binding</h3>
 <button (click)="save($event)">SAVE</button>
+<br/>
 <!-- EXAMPLE OF EVENT FILTERING WITH USER PRESSING ENTER -->
-<input type="text" (keyup) = "onKeyUp($event)">
+<h3>EVENT FILTERING. FILTERS FOR ENTER PRESS.</h3>
+<input type="text" (keyup) = "onKeyUp($event)"/>
 
+<br/>
+<h3>TEMPLATE VARIABLE</h3>
+<input type="text" (keyup.enter) = "onKeyUp2(nombre.value)" #nombre/>
+
+<h3>TWO-WAY BINDING. IMPORT FORMSMODULE IN app.module.ts TO USE ngModel</h3>
+<input type="text" [(ngModel)]="person.name">
+<p>{{person.name}}</p>
 </div>
 
 <router-outlet></router-outlet>

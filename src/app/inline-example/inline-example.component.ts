@@ -5,6 +5,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-inline-example',
   template: `
     <p>inline-example works! {{ parentData }}</p>
+    <h3>CLICK BUTTON BELOW TO SEE EXAMPLE OF CHILD COMPONENT ADDING DATA TO PARENT</h3>
     <button (click)="fireEvent()">Send event</button>
   `,
   styles: [],
